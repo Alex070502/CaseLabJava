@@ -15,7 +15,7 @@ public class FileController {
     }
 
     @PostMapping(value="/create", consumes = "application/json", produces = "application/json")
-    public @ResponseBody int save(@RequestBody File file) {
+    public @ResponseBody int saveFile(@RequestBody File file) {
         LocalDateTime time = LocalDateTime.now(ZoneId.of("GMT+8"));
         file.setCreationDate(time);
         File f = fileRepository.save(file);
